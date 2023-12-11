@@ -4,69 +4,83 @@ public class vivienda {
     private String direccion;
     private int numHabitaciones;
     private String tipoVivienda;
+
     //Contructor de la clase vivienda
-    public vivienda(String direccion, int numHabitaciones, String tipoVivienda){
+    public vivienda(String direccion, int numHabitaciones, String tipoVivienda) {
         this.direccion = direccion;
         this.numHabitaciones = numHabitaciones;
         this.tipoVivienda = tipoVivienda;
     }
+
     //getters y setters de la clase atributo
-    public String getDireccion(){
+    public String getDireccion() {
         return direccion;
     }
-    public void setDireccion(String direccion){
+
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public int getNumHabitaciones(){
+
+    public int getNumHabitaciones() {
         return numHabitaciones;
     }
-    public void setNumHabitaciones(int numHabitaciones){
+
+    public void setNumHabitaciones(int numHabitaciones) {
         this.numHabitaciones = numHabitaciones;
     }
-    public String getTipoVivienda(){
+
+    public String getTipoVivienda() {
         return tipoVivienda;
     }
-    public void setTipoVivienda(String tipoVivienda){
+
+    public void setTipoVivienda(String tipoVivienda) {
         this.tipoVivienda = tipoVivienda;
     }
-        //metodo mostrar Informacion
-    public void mostrarInfo(){
+
+    //metodo mostrar Informacion
+    public void mostrarInfo() {
         System.out.print("La info de la vivienda es: ");
-        System.out.print("Direccion: "+ direccion);
-        System.out.print("Numero de Habitaciones: "+ numHabitaciones);
-        System.out.print("Tipo de vivienda: "+tipoVivienda);
+        System.out.print("Direccion: " + direccion);
+        System.out.print("Numero de Habitaciones: " + numHabitaciones);
+        System.out.print("Tipo de vivienda: " + tipoVivienda);
     }
 
     //nueva clase hija heredada de la clase vivienda
-    class casa extends vivienda{
+    class casa extends vivienda {
         //atributos de la clase casa
         private double areaConstruida;
 
         private int numBanos;
+
         //constructor de la clase hija
-        public casa(String direccion, int numHabitaciones, String tipoVivienda, double areaConstruida, int numBanos){
+        public casa(String direccion, int numHabitaciones, String tipoVivienda, double areaConstruida, int numBanos) {
             super(direccion, numHabitaciones, tipoVivienda);
             this.areaConstruida = areaConstruida;
             this.numBanos = numBanos;
         }
+
         //getters y setters de la clase hija
-        public double getAreaConstruida(){
+        public double getAreaConstruida() {
             return areaConstruida;
         }
-        public void setAreaConstruida(double areaConstruida){
+
+        public void setAreaConstruida(double areaConstruida) {
             this.areaConstruida = areaConstruida;
         }
-        public int getNumBanos(){
+
+        public int getNumBanos() {
             return numBanos;
         }
-        public void setNumBanos(int numBanos){
+
+        public void setNumBanos(int numBanos) {
             this.numBanos = numBanos;
         }
+
         //metodo mostrar Informacion
-        public void mostrarInfo(){
+        public void mostrarInfo() {
             super.mostrarInfo();
-            System.out.print("Area Construida: "+ areaConstruida);
-            System.out.print("Numero de baños: "+numBanos);
+            System.out.print("Area Construida: " + areaConstruida);
+            System.out.print("Numero de baños: " + numBanos);
         }
 
 
@@ -75,88 +89,98 @@ public class vivienda {
 
 //clase casaCiudad heredada de casa
 
-    class  casaCiudad extends casa{
+    class casaCiudad extends casa {
         //atributos departamiento
         private String estadoCasaCiudad;
         private float precioCasaCiudad;
 
         //metodos clase departamiento
-            //Constructor
-        public casaCiudad (String direccion, int numHabitaciones, String tipoVivienda, double areaConstruida, int numBanos, String estadoCasaCiudad, float precioCasaCiudad){
+        //Constructor
+        public casaCiudad(String direccion, int numHabitaciones, String tipoVivienda, double areaConstruida, int numBanos, String estadoCasaCiudad, float precioCasaCiudad) {
             super(direccion, numHabitaciones, tipoVivienda, areaConstruida, numBanos);
             this.estadoCasaCiudad = estadoCasaCiudad;
             this.precioCasaCiudad = precioCasaCiudad;
         }
 
         //getters y setters de la clase departamento
-            //atributo estadoDepartamento
-        public String getEstadoCasaCiudad(){
+        //atributo estadoDepartamento
+        public String getEstadoCasaCiudad() {
             return estadoCasaCiudad;
         }
 
-        public void setEstadoCasaCiudad(String estadoCasaCiudad){
+        public void setEstadoCasaCiudad(String estadoCasaCiudad) {
             this.estadoCasaCiudad = estadoCasaCiudad;
         }
-            //atributo precioDepartamento
+        //atributo precioDepartamento
 
-        public float getPrecioCasaCiudad(){
+        public float getPrecioCasaCiudad() {
             return precioCasaCiudad;
         }
-        public void setPrecioCasaCiudad(float precioCasaCiudad){
+
+        public void setPrecioCasaCiudad(float precioCasaCiudad) {
             this.precioCasaCiudad = precioCasaCiudad;
         }
+
         //metodo mostrar Informacion
-        public void mostrarInfo(){
+        public void mostrarInfo() {
             super.mostrarInfo();
-            System.out.print("Estado: "+ estadoCasaCiudad);
-            System.out.print("Precio: "+precioCasaCiudad);
+            System.out.print("Estado: " + estadoCasaCiudad);
+            System.out.print("Precio: " + precioCasaCiudad);
         }
 
     }
+
     //tercer nivel de herencia
-    class  apartamentoCiudad extends casaCiudad{
+    class apartamentoCiudad extends casaCiudad {
         //atributos
         private String tipoAparcamiento;
         private String tipoSeguridad;
         private int numPersonasViviendo;
 
         //metodos
-            //constructor
+        //constructor
         public apartamentoCiudad(String direccion, int numHabitaciones, String tipoVivienda, double areaConstruida,
                                  int numBanos, String estadoCasaCiudad, float precioCasaCiudad, String tipoAparcamiento,
-                                 String tipoSeguridad,int numPersonasViviendo){
+                                 String tipoSeguridad, int numPersonasViviendo) {
             super(direccion, numHabitaciones, tipoVivienda, areaConstruida, numBanos, estadoCasaCiudad, precioCasaCiudad);
             this.tipoAparcamiento = tipoAparcamiento;
             this.tipoSeguridad = tipoSeguridad;
             this.numPersonasViviendo = numPersonasViviendo;
         }
+
         //getters and setters clase apartamentoCiudad
-            //atributo tipoAparcamiento
-        public String getTipoAparcamiento(){
+        //atributo tipoAparcamiento
+        public String getTipoAparcamiento() {
             return tipoAparcamiento;
         }
-        public void setTipoAparcamiento(String tipoAparcamiento){
+
+        public void setTipoAparcamiento(String tipoAparcamiento) {
             this.tipoAparcamiento = tipoAparcamiento;
         }
-            //atributo tipoSeguridad
-        public String getTipoSeguridad(){
+
+        //atributo tipoSeguridad
+        public String getTipoSeguridad() {
             return tipoSeguridad;
         }
-        public void setTipoSeguridad(String tipoSeguridad){
+
+        public void setTipoSeguridad(String tipoSeguridad) {
             this.tipoSeguridad = tipoSeguridad;
         }
-            //atributo numPersonasViviendo
-        public int getNumPersonasViviendo(){
+
+        //atributo numPersonasViviendo
+        public int getNumPersonasViviendo() {
             return numPersonasViviendo;
         }
-        public void setNumPersonasViviendo(int numPersonasViviendo){
+
+        public void setNumPersonasViviendo(int numPersonasViviendo) {
             this.numPersonasViviendo = numPersonasViviendo;
         }
-        public void mostrarInfo(){
+
+        public void mostrarInfo() {
             super.mostrarInfo();
-            System.out.print("Tipo de aparcamiento: "+ tipoAparcamiento);
-            System.out.print("Tipo de seguridad: "+tipoSeguridad);
-            System.out.print("Numero de personas viviendo: "+numPersonasViviendo);
+            System.out.print("Tipo de aparcamiento: " + tipoAparcamiento);
+            System.out.print("Tipo de seguridad: " + tipoSeguridad);
+            System.out.print("Numero de personas viviendo: " + numPersonasViviendo);
 
         }
 
@@ -166,10 +190,6 @@ public class vivienda {
     // 4 y 5 niveles
 
 
-
     //ejecucion main
-
-
-
 }
 
