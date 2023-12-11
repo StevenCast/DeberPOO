@@ -186,7 +186,6 @@ public class vivienda {
 
     }
 
-
     // 4 y 5 niveles
 
 
