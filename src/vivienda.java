@@ -181,7 +181,6 @@ public class vivienda {
             System.out.print("Tipo de aparcamiento: " + tipoAparcamiento);
             System.out.print("Tipo de seguridad: " + tipoSeguridad);
             System.out.print("Numero de personas viviendo: " + numPersonasViviendo);
-
         }
 
     }
